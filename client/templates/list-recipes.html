@@ -1,0 +1,26 @@
+<template name="listRecipes">
+    <h2>
+        All recipes
+    </h2>
+    <p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
+    <ol>
+        {{#each recipes}}
+        {{> longRecipe}}
+        {{/each}}
+    </ol>
+</template>
+
+
+<template name="longRecipe">
+	<li>
+		{{recipeName}} &mdash; Created on {{createdDate}} by {{createdBy}}
+	</li>
+</template>
+
+<template name="listRecipes-outer">
+    <div class="row">
+        <span class="span8">
+            {{> longRecipe}}
+        </span>
+    </div>
+</template>

@@ -35,8 +35,8 @@ Meteor.methods({
                     recipeName: formFieldsObject.recipeName,
                     ingredients: formFieldsObject.ingredients,
                     method: formFieldsObject.method,
-                    creator: Meteor.userId(),
-                    createdAt: rightNow,
+                    createdBy: Meteor.userId(),
+                    createdDate: rightNow,
                     updatedDate: rightNow
                 });
             
