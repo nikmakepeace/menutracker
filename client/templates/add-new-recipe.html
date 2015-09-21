@@ -6,19 +6,22 @@
 
 		<form class="newRecipe" name="addNewRecipeF" id="addNewRecipeF">
 			<fieldset>
-				<legend>Please provide details of your recipe</legend>			
-				<label for="recipeName">Recipe name</label>
-				<span class="formError" id="recipeName-error"></span>
-				<input type="text" name="recipeName" placeholder="What's your recipe called?" class="span8">
-
-				<label for="ingredients">Ingredients</label>
-				<span class="formError" id="ingredients-error"></span>
-				<textarea name="ingredients" placeholder="Enter ingredients here, one per line" class="span8"></textarea>
-
-				<label for="method">Method</label>
-				<span class="formError" id="method-error"></span>
-				<textarea name="method" placeholder="Describe step by step how your dish is made" class="span8"></textarea>
-
+				<legend>Please provide details of your recipe</legend>
+				<div class="form-group">
+					<label for="recipeName">Recipe name</label>
+					<span class="formError" id="recipeName-error"></span>
+					<input type="text" name="recipeName" placeholder="What's your recipe called? Be descriptive rather than artistic to help people find it" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="ingredients">Ingredients</label>
+					<span class="formError" id="ingredients-error"></span>
+					<textarea name="ingredients" placeholder="Enter measures and ingredients here, one per line. For example, 450g salted butter" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="method">Method</label>
+					<span class="formError" id="method-error"></span>
+					<textarea name="method" placeholder="Describe step by step how your dish is made" class="form-control"></textarea>
+				</div>
 			</fieldset>
 			<button type="submit" class="btn btn-primary">Add recipe</button>
 		</form>
