@@ -1,24 +1,35 @@
 <template name="addNewRecipe">
-	<h2>
-		Add new recipe
-	</h2>
-	
-	<form class="newRecipe" name="addNewRecipeF" id="addNewRecipeF">
-		<fieldset>
-			<legend>Please provide details of your recipe</legend>			
-			<label for="recipeName">Recipe name</label>
-			<span class="formError" id="recipeName-error"></span>
-			<input type="text" name="recipeName" placeholder="What's your recipe called?" class="span8">
-			
-			<label for="ingredients">Ingredients</label>
-			<span class="formError" id="ingredients-error"></span>
-			<textarea name="ingredients" placeholder="Enter ingredients here, one per line" class="span8"></textarea>
+	<section>
+		<h2>
+			Add new recipe
+		</h2>
 
-			<label for="method">Method</label>
-			<span class="formError" id="method-error"></span>
-			<textarea name="method" placeholder="Describe step by step how your dish is made" class="span8"></textarea>
-			
-		</fieldset>
-		<button type="submit" class="btn btn-primary">Add recipe</button>
-	</form>
+		<form class="newRecipe" name="addNewRecipeF" id="addNewRecipeF">
+			<fieldset>
+				<legend>Please provide details of your recipe</legend>			
+				<label for="recipeName">Recipe name</label>
+				<span class="formError" id="recipeName-error"></span>
+				<input type="text" name="recipeName" placeholder="What's your recipe called?" class="span8">
+
+				<label for="ingredients">Ingredients</label>
+				<span class="formError" id="ingredients-error"></span>
+				<textarea name="ingredients" placeholder="Enter ingredients here, one per line" class="span8"></textarea>
+
+				<label for="method">Method</label>
+				<span class="formError" id="method-error"></span>
+				<textarea name="method" placeholder="Describe step by step how your dish is made" class="span8"></textarea>
+
+			</fieldset>
+			<button type="submit" class="btn btn-primary">Add recipe</button>
+		</form>
+	</section>
+
+</template>
+
+<template name="addNewRecipe-outer">
+	<div class="row">
+		<span class="span8">
+			{{> addNewRecipe}}
+		</span>
+	</div>
 </template>

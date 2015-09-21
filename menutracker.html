@@ -1,6 +1,6 @@
 <head>
-  	<title>Menus</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menus</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <template name="main">
@@ -37,7 +37,9 @@
 		</div>
 	</nav>
 	<div class="container main">
-	{{> yield}}
+		
+		{{> yield}}
+		
 	</div>
 </template>
 
@@ -46,14 +48,12 @@
 	<div class="row">
 		{{#if currentUser}}
 		<span class="span8">
-			<section>
-	  		{{> addNewRecipe}}
-			</section>
+			{{> addNewRecipe}}
 		</span>
 		{{/if}}
 		<span class="span4">
 			<section id="recentRecipes">
-	  		{{> listRecentRecipes}}
+				{{> listRecentRecipes}}
 			</section>
 		</span>
 

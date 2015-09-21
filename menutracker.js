@@ -3,7 +3,7 @@ Recipes = new Mongo.Collection('recipes');
 
 var addNewRecipeForm = {
     name: 'addNewRecipeF',
-    template: 'addNewRecipeT',
+    template: 'addNewRecipe',
     method: 'addNewRecipeM',
     fields: {
         recipeName: {
