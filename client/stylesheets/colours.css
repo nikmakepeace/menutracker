@@ -1,0 +1,23 @@
+.container.main {
+	margin-top: 41px;
+}
+
+#login-buttons {
+	padding: 10px 0 0 0;
+	color: white;
+}
+#login-buttons-logout.login-button.single-login-button {
+	
+}
+
+.navbar .nav > li > div#login-buttons a {
+    float: none;
+    padding: 10px 15px 0 0;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+.navbar-inverse .nav > li > div#login-buttons a {
+    color: #999999;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}

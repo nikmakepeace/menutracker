@@ -1,0 +1,61 @@
+<head>
+  	<title>Menus</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<template name="main">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button> 
+				<a class="brand" href="/">MenuTracker</a>
+				<nav class="nav-collapse collapse">
+					<ul class="nav">
+						<li>
+							<a href="#">Recipe search</a>
+						</li>
+						<li>
+							<a href="#">My recipes</a>
+						</li>
+						<li>
+							<a href="{{pathFor route="addNewRecipe"}}">New recipe</a>
+						</li>
+					</ul>
+				</nav>
+				<nav>
+					<ul class="nav pull-right">
+						<li>
+							{{> loginButtons}} 
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</nav>
+	<div class="container main">
+	{{> yield}}
+	</div>
+</template>
+
+<template name="homePage">
+
+	<div class="row">
+		{{#if currentUser}}
+		<span class="span8">
+			<section>
+	  		{{> addNewRecipe}}
+			</section>
+		</span>
+		{{/if}}
+		<span class="span4">
+			<section id="recentRecipes">
+	  		{{> listRecentRecipes}}
+			</section>
+		</span>
+
+	</div>
+</template>

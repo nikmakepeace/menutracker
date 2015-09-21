@@ -1,0 +1,18 @@
+<template name="listRecentRecipes">
+  	<h2>
+  		Recent recipes
+  	</h2>
+  	<p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
+  	<ol>
+  		{{#each recipes}}
+  			{{> shortRecipe}}
+  		{{/each}}
+  	</ol>
+</template>
+
+
+<template name="shortRecipe">
+	<li>
+		{{recipeName}}
+	</li>
+</template>

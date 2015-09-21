@@ -1,0 +1,6 @@
+Meteor.subscribe('recipes');
+
+
+
+
+
