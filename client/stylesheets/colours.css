@@ -1,13 +1,16 @@
 .container.main {
 	margin-top: 41px;
+	background-color: white;
+}
+
+#page {
+	background-color: white;
+	padding-bottom: 40px;
 }
 
 #login-buttons {
 	padding: 10px 0 0 0;
 	color: white;
-}
-#login-buttons-logout.login-button.single-login-button {
-	
 }
 
 .navbar .nav > li > div#login-buttons a {

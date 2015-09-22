@@ -11,10 +11,10 @@ Template.listRecipes.helpers({
             return {
                 'recipeName': recipe.recipeName,
                 'createdDate': recipe.createdDate,
-                'createdBy': (function() { return Meteor.users.findOne({_id: recipe.createdBy}).profile.name })()
+                'createdBy': (function() { return Meteor.users.findOne({_id: recipe.createdBy}).profile.name })(),
+                '_id': recipe._id
             }
         });
-        console.log(recipesData);
         return recipesData;
     },
 

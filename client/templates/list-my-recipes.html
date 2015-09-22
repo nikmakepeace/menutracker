@@ -1,0 +1,28 @@
+<template name="listMyRecipes">
+{{#if currentUser}}
+    <h2>
+        My recipes
+    </h2>
+    <p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
+    <ol>
+        {{#each recipes}}
+        {{> longMyRecipe}}
+        {{/each}}
+    </ol>
+{{/if}}
+</template>
+
+
+<template name="longMyRecipe">
+	<li>
+		{{recipeName}} &mdash; Created on {{createdDate}} <span class="badge">edit</span>
+	</li>
+</template>
+
+<template name="listMyRecipes-outer">
+    <div class="row">
+        <span class="span8">
+            {{> listMyRecipes}}
+        </span>
+    </div>
+</template>

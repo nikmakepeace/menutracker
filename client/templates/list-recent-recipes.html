@@ -2,14 +2,18 @@
   	<h2>
   		Recent recipes
   	</h2>
-  	<p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
+  	<p>
+        Showing {{numRecipesShowing}} out of {{recipeCount}} recipes. 
+        {{#if lt numRecipesShowing recipeCount}}
+            See <a href="{{pathFor route="listRecipes"}}">all the recipes</a>.
+        {{/if}}
+    </p>
   	<ol>
   		{{#each recipes}}
   			{{> shortRecipe}}
   		{{/each}}
   	</ol>
 </template>
-
 
 <template name="shortRecipe">
 	<li>

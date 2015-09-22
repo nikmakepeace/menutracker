@@ -1,4 +1,5 @@
 <template name="addNewRecipe">
+{{#if currentUser}}
 	<section>
 		<h2>
 			Add new recipe
@@ -26,13 +27,13 @@
 			<button type="submit" class="btn btn-primary">Add recipe</button>
 		</form>
 	</section>
-
+{{/if}}
 </template>
 
 <template name="addNewRecipe-outer">
 	<div class="row">
-		<span class="span8">
+		<div class="col-md-8">
 			{{> addNewRecipe}}
-		</span>
+		</div>
 	</div>
 </template>
