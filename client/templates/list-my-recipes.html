@@ -1,28 +1,31 @@
 <template name="listMyRecipes">
-{{#if currentUser}}
-    <h2>
-        My recipes
-    </h2>
-    <p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
-    <ol>
-        {{#each recipes}}
-        {{> longMyRecipe}}
-        {{/each}}
-    </ol>
+{{#if Template.subscriptionsReady}}
+    {{#if currentUser}}
+        <h2>
+            My recipes
+        </h2>
+        <p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
+        <ol>
+            {{#each recipes}}
+            {{> longMyRecipe}}
+            {{/each}}
+        </ol>
+    {{/if}}
 {{/if}}
 </template>
 
 
 <template name="longMyRecipe">
 	<li>
-		{{recipeName}} &mdash; Created on {{createdDate}} <span class="badge">edit</span>
+		<a href="{{pathFor route='viewRecipe'}}">{{recipeName}}</a> &mdash; 
+        Added {{formatDate createdDate}} 
 	</li>
 </template>
 
 <template name="listMyRecipes-outer">
     <div class="row">
-        <span class="span8">
+        <div class="col-md-8">
             {{> listMyRecipes}}
-        </span>
+        </div>
     </div>
 </template>

@@ -13,7 +13,7 @@
 
 <template name="longRecipe">
 	<li>
-		<a href="{{pathFor route='viewRecipe'}}">{{recipeName}}</a> &mdash; Created on {{createdDate}} by {{createdBy}}
+		<a href="{{pathFor route='viewRecipe'}}">{{recipeName}}</a> &mdash; Added {{formatDate createdDate}} by {{createdBy}}
 	</li>
 </template>
 

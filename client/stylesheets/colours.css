@@ -1,11 +1,11 @@
 .container.main {
-	margin-top: 41px;
 	background-color: white;
 }
 
 #page {
 	background-color: white;
 	padding-bottom: 40px;
+	margin-top: 50px;
 }
 
 #login-buttons {
@@ -31,6 +31,10 @@
 
 #nav-login-button .login-button {
 	margin-left: 15px;
+}
+
+.recipe-notes p {
+	font-style: italic;
 }
 
 @media (min-width: 768px) {

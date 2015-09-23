@@ -11,4 +11,5 @@ accounts-twitter
 iron:router
 twbs:bootstrap
 http
-mizzao:jquery-ui
+momentjs:moment
+mrt:flash-messages

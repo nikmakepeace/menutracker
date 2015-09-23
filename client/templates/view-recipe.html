@@ -1,7 +1,29 @@
 <template name="viewRecipe">
-<h2>{{recipeName}}</h2>
-<h3>Ingredients</h3>
-<pre>{{ingredients}}</pre>
-<h3>Method</h3>
-<pre>{{method}}</pre>
+	<a href="{{pathFor route="editRecipe"}}" class="btn btn-default btn-primary pull-right" role="button" style='margin-top: 20px'>Edit recipe</a>
+	<h2>{{recipeName}}</h2>
+	<div class="row">
+		{{#if notes}}
+		<div class="col-md-12 recipe-notes">
+			{{#each show src=notes}}
+			<p>{{line}}</p>
+			{{/each}}
+		</div>
+		{{/if}}
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<h3>Ingredients</h3>
+			{{#each show src=ingredients}}
+			<p>{{line}}</p>
+			{{/each}}
+		</div>
+		<div class="col-md-9">
+			<h3>Method</h3>
+			{{#each show src=method}}
+			<p>{{line}}</p>
+			{{/each}}
+		</div>
+		
+	</div>
 </template>
+

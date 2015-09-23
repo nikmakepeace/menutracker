@@ -1,0 +1,50 @@
+<template name="editRecipe">
+	{{#if eq currentUser._id createdBy}}
+	
+	<section>
+		<h2>
+			Edit recipe
+		</h2>
+
+		<form class="editRecipe" name="editRecipeF" id="editRecipeF">
+			<fieldset>
+				<legend>Please provide details of your recipe</legend>
+				<div class="form-group">
+					<label for="recipeName">Recipe name</label>
+					<span class="formError" id="recipeName-error"></span>
+					<input type="text" name="recipeName" placeholder="What's your recipe called? Be descriptive rather than artistic to help people find it" class="form-control" value="{{recipeName}}">
+				</div>
+
+				<div class="form-group">
+					<label for="ingredients">Ingredients</label>
+					<span class="formError" id="ingredients-error"></span>
+					<textarea name="ingredients" placeholder="Enter measures and ingredients here, one per line. For example, 450g salted butter" class="form-control">{{ingredients}}</textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="method">Method</label>
+					<span class="formError" id="method-error"></span>
+					<textarea name="method" placeholder="Describe step by step how your dish is made" class="form-control">{{method}}</textarea>
+				</div>
+				
+				<div class="form-group">
+					<label for="method">Notes</label>
+					<span class="formError" id="notes-error"></span>
+					<textarea name="notes" placeholder="If there are any notes on the recipe you'd like to add, go ahead" class="form-control">{{notes}}</textarea>
+				</div>
+			</fieldset>
+			<button type="submit" class="btn btn-primary">Confirm change</button>
+			
+		</form>
+	</section>
+
+	{{/if}}
+</template>
+
+<template name="editRecipe-outer">
+	<div class="row">
+		<div class="col-md-8">
+			{{> editRecipe}}
+		</div>
+	</div>
+</template>

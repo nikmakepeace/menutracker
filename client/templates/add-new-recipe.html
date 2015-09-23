@@ -1,5 +1,6 @@
 <template name="addNewRecipe">
-{{#if currentUser}}
+	{{#if currentUser}}
+	
 	<section>
 		<h2>
 			Add new recipe
@@ -13,21 +14,30 @@
 					<span class="formError" id="recipeName-error"></span>
 					<input type="text" name="recipeName" placeholder="What's your recipe called? Be descriptive rather than artistic to help people find it" class="form-control">
 				</div>
+
 				<div class="form-group">
 					<label for="ingredients">Ingredients</label>
 					<span class="formError" id="ingredients-error"></span>
 					<textarea name="ingredients" placeholder="Enter measures and ingredients here, one per line. For example, 450g salted butter" class="form-control"></textarea>
 				</div>
+
 				<div class="form-group">
 					<label for="method">Method</label>
 					<span class="formError" id="method-error"></span>
 					<textarea name="method" placeholder="Describe step by step how your dish is made" class="form-control"></textarea>
 				</div>
+				
+				<div class="form-group">
+					<label for="method">Notes</label>
+					<span class="formError" id="notes-error"></span>
+					<textarea name="notes" placeholder="If there are any notes on the recipe you'd like to add, go ahead" class="form-control"></textarea>
+				</div>
 			</fieldset>
 			<button type="submit" class="btn btn-primary">Add recipe</button>
 		</form>
 	</section>
-{{/if}}
+
+	{{/if}}
 </template>
 
 <template name="addNewRecipe-outer">

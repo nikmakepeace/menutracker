@@ -11,6 +11,7 @@ Template.listMyRecipes.helpers({
             return {
                 'recipeName': recipe.recipeName,
                 'createdDate': recipe.createdDate,
+                '_id': recipe._id
             }
         });
         return recipesData;
