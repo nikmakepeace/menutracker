@@ -1,29 +1,47 @@
 <template name="viewRecipe">
 	<a href="{{pathFor route="editRecipe"}}" class="btn btn-default btn-primary pull-right" role="button" style='margin-top: 20px'>Edit recipe</a>
-	<h2>{{recipeName}}</h2>
+	<h1>{{recipeName}}</h1>
 	<div class="row">
 		{{#if notes}}
 		<div class="col-md-12 recipe-notes">
-			{{#each show src=notes}}
-			<p>{{line}}</p>
-			{{/each}}
+			<section id="notes">
+				{{#each show src=notes}}
+				<p>{{line}}</p>
+				{{/each}}
+			</section>
 		</div>
 		{{/if}}
 	</div>
 	<div class="row">
 		<div class="col-md-3">
-			<h3>Ingredients</h3>
-			{{#each show src=ingredients}}
-			<p>{{line}}</p>
-			{{/each}}
+			<section id="ingredients">
+				<h2>Ingredients</h2>
+				{{#each showIngredients src=ingredients}}
+					{{>ingredientsLine}}
+				{{/each}}
+			</section>
 		</div>
 		<div class="col-md-9">
-			<h3>Method</h3>
-			{{#each show src=method}}
-			<p>{{line}}</p>
-			{{/each}}
+			<section id="method">
+				<div class="btn-group btn-group-xs pull-right" role="group" aria-label="temperature conversions">
+  					<button type="button" class="btn btn-default temp-converter" data-scale="C">Celsius</button>
+  					<button type="button" class="btn btn-default temp-converter" data-scale="F">Fahrenheit</button>
+  					<button type="button" class="btn btn-default temp-converter" data-scale="GasMark">Gas mark</button>
+  				</div>
+
+				<h2>Method</h2>
+				{{#each show src=method}}
+				<p>{{line}}</p>
+				{{/each}}
+			</section>
 		</div>
-		
 	</div>
 </template>
 
+<template name="ingredientsLine">
+{{#if line.heading}}
+	<h3>{{line.text}}</h3>{{/if}}
+{{#if line.ingredient}}
+	<p>{{line.text}}</p>
+{{/if}}
+</template>

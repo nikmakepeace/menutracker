@@ -22,7 +22,7 @@ Template.registerHelper('formatDate', function(date, format) {
 });
 
 FlashMessages.configure({
-    autoHide: false,
-    hideDelay: 2000,
-    autoScroll: true
-  });
+	autoHide: false,
+	hideDelay: 2000,
+	autoScroll: true
+});

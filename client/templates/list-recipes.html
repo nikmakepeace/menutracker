@@ -1,7 +1,7 @@
 <template name="listRecipes">
-    <h2>
+    <h1>
         All recipes
-    </h2>
+    </h1>
     <p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
     <ol>
         {{#each recipes}}
@@ -13,7 +13,10 @@
 
 <template name="longRecipe">
 	<li>
-		<a href="{{pathFor route='viewRecipe'}}">{{recipeName}}</a> &mdash; Added {{formatDate createdDate}} by {{createdBy}}
+		<a href="{{pathFor route='viewRecipe'}}">{{recipeName}}</a> &mdash; Added {{>createdDate}} by {{createdByName}}
+        {{#each ingredientTags}}
+            <span class="badge">{{.}}</span>
+        {{/each}}
 	</li>
 </template>
 
@@ -23,4 +26,12 @@
             {{> longRecipe}}
         </div>
     </div>
+</template>
+
+<template name="createdDate">
+    {{#if updatedAt}}
+        <span title="Updated {{formatDate updatedAt}}">{{formatDate createdAt}}</span>
+    {{else}}
+        {{formatDate createdAt}}
+    {{/if}}
 </template>

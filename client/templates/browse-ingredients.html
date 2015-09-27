@@ -1,0 +1,21 @@
+<template name="browseIngredients">
+	<h1>Browse recipes by ingredient</h1>
+	<p>Click on any ingredient to find a list of recipes including that ingredient.</p>
+	{{#each allIngredients}}
+		{{#if heading}}
+			<h2>{{heading}}</h2>
+		{{/if}}
+		{{#if ingredient}}
+			<a href="{{pathFor route="browseRecipesByIngredient"}}">{{ingredient}}</a> <span class="badge">{{count}}</span>
+		{{/if}}
+		
+	{{/each}}
+</template>
+
+<template name="browseIngredients-outer">
+	<div class="row">
+		<div class="col-md-8">
+			{{> browseIngredients}}
+		</div>
+	</div>
+</template>

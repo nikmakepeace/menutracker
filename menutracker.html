@@ -4,15 +4,16 @@
 </head>
 
 <template name="main">
+<div id="bodyproxy">
 	{{> navBar}}
 
 	<div id="page">
 		{{> flashMessages}}
-
 		<div class="container main">
 			{{> yield}}
 		</div>
 	</div>
+</div>
 </template>
 
 <template name="numRecipes">

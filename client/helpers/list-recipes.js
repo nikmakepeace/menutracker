@@ -6,16 +6,7 @@ Template.listRecipes.onCreated(function(){
 Template.listRecipes.helpers({
     recipes: function () {
         var maxRecipes = Template.instance().maxRecipes;
-        var recipes = Recipes.find({}, {'limit': maxRecipes, 'sort': {'updatedDate': -1}, name: 1});
-        var recipesData = recipes.map(function(recipe) {
-            return {
-                'recipeName': recipe.recipeName,
-                'createdDate': recipe.createdDate,
-                'createdBy': (function() { return Meteor.users.findOne({_id: recipe.createdBy}).profile.name })(),
-                '_id': recipe._id
-            }
-        });
-        return recipesData;
+        return recipes = Recipes.find({}, {'limit': maxRecipes, 'sort': {'updatedDate': -1}, recipeName: 1, createdDate: 1, _id: 1, tags: 1});
     },
 
     recipeCount: function () {

@@ -6,7 +6,7 @@ Template.listRecentRecipes.onCreated(function(){
 Template.listRecentRecipes.helpers({
     recipes: function () {
         var maxRecentRecipes = Template.instance().maxRecentRecipes;
-        return Recipes.find({}, {'limit': maxRecentRecipes, 'sort': {'updatedDate': -1}, name: 1, createdAt: 1, creator: 1});
+        return Recipes.find({}, {'limit': maxRecentRecipes, 'sort': {'updatedDate': 1}, name: 1, createdAt: 1, creator: 1});
     },
 
     recipeCount: function () {

@@ -6,15 +6,7 @@ Template.listMyRecipes.onCreated(function(){
 Template.listMyRecipes.helpers({
     recipes: function () {
         var maxRecipes = Template.instance().maxRecipes;
-        var recipes = Recipes.find({createdBy: Meteor.userId()}, {'limit': maxRecipes, 'sort': {'updatedDate': -1}, name: 1});
-        var recipesData = recipes.map(function(recipe) {
-            return {
-                'recipeName': recipe.recipeName,
-                'createdDate': recipe.createdDate,
-                '_id': recipe._id
-            }
-        });
-        return recipesData;
+        return recipes = Recipes.find({createdBy: Meteor.userId()}, {'limit': maxRecipes, 'sort': {'updatedDate': -1}, recipeName: 1, createdDate: 1, _id: 1, tags: 1});
     },
 
     recipeCount: function () {
@@ -24,5 +16,5 @@ Template.listMyRecipes.helpers({
     numRecipesShowing: function () {
         var maxRecipes = Template.instance().maxRecipes;
         return Math.min(maxRecipes, Recipes.find({createdBy: Meteor.userId()}).count());
-    }
+    },
 });

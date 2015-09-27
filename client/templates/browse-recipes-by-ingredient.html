@@ -1,0 +1,16 @@
+<template name="browseRecipesByIngredient">
+	<h1>All recipes containing {{ingredient}}</h1>
+	<ul>
+	{{#each recipes}}
+		{{> longRecipe}}
+	{{/each}}
+	</ul>
+</template>
+
+<template name="browseRecipesByIngredient-outer">
+	<div class="row">
+		<div class="col-md-8">
+			{{> browseRecipesByIngredient}}
+		</div>
+	</div>
+</template>

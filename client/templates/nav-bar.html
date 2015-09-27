@@ -12,15 +12,25 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="{{isActiveRoute routeName='listRecipes'}}"><a href="{{pathFor route="listRecipes"}}">All recipes <span class="badge">{{> numRecipes src='all'}}</span></a></li> 
-					
-					{{#if currentUser}}
-					<li class="{{isActiveRoute routeName='listMyRecipes'}}"><a href="{{pathFor route="listMyRecipes"}}">My recipes <span class="badge">{{> numRecipes src='my'}}</span></a></li> 
+					<li class="dropdown {{isActiveRoute routeName='listRecipes'}} {{isActiveRoute routeName='listMyRecipes'}}">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						{{#if currentUser}}
+							<li class="{{isActiveRoute routeName='listMyRecipes'}}"><a href="{{pathFor route="listMyRecipes"}}">My recipes <span class="badge">{{> numRecipes src='my'}}</span></a></li>
+						{{/if}}
+							<li class="{{isActiveRoute routeName='listRecipes'}}"><a href="{{pathFor route="listRecipes"}}">All recipes <span class="badge">{{> numRecipes src='all'}}</span></a></li> 
+							<li class="{{isActiveRoute routeName='browseIngredients'}}"><a href	="{{pathFor route="browseIngredients"}}">Browse by ingredient</a></li>	
+						</ul>
+					</li>
+				
+				{{#if currentUser}}
 					<li class="{{isActiveRoute routeName='addNewRecipe'}}"><a href="{{pathFor route="addNewRecipe"}}">New recipe</a></li>
-					{{/if}}
-					
+				{{/if}}
+				
 				</ul>
-				<ul class="nav navbar-nav" id="nav-login-button">
+
+				<ul class="nav navbar-nav navbar-right" id="nav-login-button">
+
 					<li>
 						{{> loginButtons}} 
 					</li>

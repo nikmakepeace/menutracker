@@ -1,9 +1,9 @@
 <template name="listMyRecipes">
 {{#if Template.subscriptionsReady}}
     {{#if currentUser}}
-        <h2>
+        <h1>
             My recipes
-        </h2>
+        </h1>
         <p>Showing {{numRecipesShowing}} out of {{recipeCount}}</p>
         <ol>
             {{#each recipes}}
@@ -18,7 +18,10 @@
 <template name="longMyRecipe">
 	<li>
 		<a href="{{pathFor route='viewRecipe'}}">{{recipeName}}</a> &mdash; 
-        Added {{formatDate createdDate}} 
+        Added {{>createdDate}}
+        {{#each ingredientTags}}
+            <span class="badge">{{.}}</span>
+        {{/each}}
 	</li>
 </template>
 

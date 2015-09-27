@@ -1,9 +1,10 @@
 .container.main {
-	background-color: white;
+	background-color: transparent;
+
 }
 
 #page {
-	background-color: white;
+	background-color: rgba(255,255,255, 0.85);
 	padding-bottom: 40px;
 	margin-top: 50px;
 }
@@ -37,10 +38,11 @@
 	font-style: italic;
 }
 
+textarea#ingredients {
+	min-height: 10em
+}
+
 @media (min-width: 768px) {
-	#nav-login-button {
-		float: right !important;
-	}
 	#nav-login-button .login-display-name {
 		display: inline-block;
 		margin-right: -10px;
