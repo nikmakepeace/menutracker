@@ -4,7 +4,7 @@ Template.registerHelper("debug", function(something) {
 
 Template.browseIngredients.helpers({
 	allIngredients: function () {
-		console.log(Template.instance().data);
+		
 		// find all ingredienttags, sorted
 		// foreach tags
 		//	get the first letter. if it's not the same as the current letter, set the current letter and produce a heading
