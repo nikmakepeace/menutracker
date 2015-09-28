@@ -1,5 +1,4 @@
 TemperatureConverter = function() {
-
 	this.gasMarkTable = {
 		100: '¼',
 		110: '¼',
@@ -23,10 +22,16 @@ TemperatureConverter = function() {
 	}
 
 	this.fromFToGasMark = function (f) {
+		if(this.fromFToC(f) < 100) {
+			throw ('Temperature too low to convert to gas mark');
+		}
 		return this.fromCToGasMark(this.fromFToC(f));
 	}
 
 	this.fromCToGasMark = function (c) {
+		if(c < 100) {
+			throw ('Temperature too low to convert to gas mark');
+		}
 		if(c < 135) {
 			return this.gasMarkTable[this.round(c, 10)];
 		}
@@ -50,6 +55,11 @@ TemperatureConverter = function() {
 	this.convert = function (from, to, amount) {
 		from = this.convertScaleForMethod(from);
 		to = this.convertScaleForMethod(to);
+
+		if(from == to) {
+			return amount;
+		}
+		
 		var method = 'from' + from + 'To' + to;
 		if(this[method]) {
 			return this[method](amount);

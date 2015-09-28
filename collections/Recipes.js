@@ -1,6 +1,6 @@
 Recipes = new Mongo.Collection('recipes');
 Recipes.timestampable();
-Recipes.trackable();
+Recipes.trackable(['recipeName', 'method', 'ingredients', 'notes', 'updatedBy', 'updatedByName', 'updatedAt']);
 Recipes.softRemovable();
 
 Recipes.before.insert(function (userId, doc) {
