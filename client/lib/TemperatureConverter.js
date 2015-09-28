@@ -1,10 +1,14 @@
 TemperatureConverter = function() {
 	this.gasMarkTable = {
-		100: '¼',
+		105: '¼',
 		110: '¼',
 		120: '½',
 		130: '1',
 	};
+
+	this.getLowestGasMarkInCelsius = function () {
+		return Object.keys(this.gasMarkTable).sort().slice(0,1);
+	}
 
 	this.fromCToF = function(f) {
 		return this.round(f * 9 / 5 + 32);
