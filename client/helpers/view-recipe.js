@@ -51,7 +51,7 @@ var OvenTemperatureConverter = function(jQuery, ovenTemperatureMarkupGenerator) 
 
 		var fahrenheit = /(\-?\d+)(?:°?|\s?degrees?)\s?(?:f|fahrenheit)\b/gi
 		replacer = function(fullMatch, amount) {
-			return markupGen.enerateFMarkup(amount, {scale: 'F', amount: amount})
+			return markupGen.generateFMarkup(amount, {scale: 'F', amount: amount})
 		};
 		text = text.replace(fahrenheit, replacer);
 
