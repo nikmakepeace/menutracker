@@ -55,7 +55,7 @@ Template.editRecipe.helpers({
 		});
 		return output;
 	},
-		getStringifiedImages: function () {
+	getStringifiedImages: function () {
 		var stringifiedImages = [];
 		console.log(this);
 		this.images.forEach(function (image) {
