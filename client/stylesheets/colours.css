@@ -1,6 +1,35 @@
 .container.main {
 	background-color: transparent;
+}
 
+#images-upload {
+	height: 200px;
+}
+
+body.uploading div#bodyProxy {
+	background-color: red;
+	transition: background-color 1000ms linear;
+}
+
+body.you-can-upload div#upload-notice {
+	display: block;
+}
+
+div#upload-notice {
+	display: none;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	padding: 20px 0;
+	width: 100%;
+	margin-top: 40px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	font-size: 20px;
+}
+
+#images-upload.uploaded {
+	background-color: white;
 }
 
 #page {

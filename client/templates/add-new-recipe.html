@@ -46,9 +46,20 @@
 </template>
 
 <template name="addNewRecipe-outer">
-	<div class="row">
+	<div id="image-upload-drop-target" class="row">
 		<div class="col-md-8">
 			{{> addNewRecipe}}
 		</div>
+		<div class="col-md-4">
+			<section id="images-upload-results" class="hidden">
+				<h2>Pictures of this recipe</h2>
+				<div id="images-upload-thumbnails">
+
+				</div>
+			</section>
+		</div>
+	</div>
+	<div id="upload-notice" class="text-center bg-info">
+	<p>Drop images below to add them to your recipe</p>
 	</div>
 </template>
