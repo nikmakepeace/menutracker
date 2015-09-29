@@ -1,0 +1,7 @@
+.recipe-notes p {
+	font-style: italic;
+}
+
+textarea#ingredients {
+	min-height: 10em
+}
