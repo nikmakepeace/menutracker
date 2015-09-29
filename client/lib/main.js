@@ -1,6 +1,3 @@
-Meteor.subscribe('recipes');
-Meteor.subscribe('directory');
-
 Template.main.onCreated(function() {
 	var setBackgroundToFlickr = function () {
 		var scheme = 'https://';

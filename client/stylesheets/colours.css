@@ -1,35 +1,6 @@
 .container.main {
 	background-color: transparent;
-}
-
-#images-upload {
-	height: 200px;
-}
-
-body.uploading div#bodyProxy {
-	background-color: red;
-	transition: background-color 1000ms linear;
-}
-
-body.you-can-upload div#upload-notice {
-	display: block;
-}
-
-div#upload-notice {
-	display: none;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	padding: 20px 0;
-	width: 100%;
-	margin-top: 40px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	font-size: 20px;
-}
-
-#images-upload.uploaded {
-	background-color: white;
+	transition: background-color 1500ms linear;
 }
 
 #page {
@@ -41,40 +12,4 @@ div#upload-notice {
 #login-buttons {
 	padding: 10px 0 0 0;
 	color: white;
-}
-
-.navbar .nav > li > div#login-buttons a {
-    float: none;
-    padding: 10px 15px 0 0;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #ffffff;
-}
-
-.navbar-inverse .nav > li > div#login-buttons a {
-    color: #999999;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
-
-#nav-login-button .login-display-name {
-	display: none;
-}
-
-#nav-login-button .login-button {
-	margin-left: 15px;
-}
-
-.recipe-notes p {
-	font-style: italic;
-}
-
-textarea#ingredients {
-	min-height: 10em
-}
-
-@media (min-width: 768px) {
-	#nav-login-button .login-display-name {
-		display: inline-block;
-		margin-right: -10px;
-		margin-top: 4px;
-	}
 }
