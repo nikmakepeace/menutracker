@@ -3,5 +3,9 @@
 }
 
 textarea#ingredients {
-	min-height: 10em
+	height: 8em
+}
+
+textarea#method {
+	height: 8em
 }

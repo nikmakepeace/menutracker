@@ -5,7 +5,7 @@
 
 body.uploading div#bodyProxy {
 	background-color: red;
-	transition: background-color 1000ms linear;
+	transition: background-color 1500ms linear;
 }
 
 body.you-can-upload div#upload-notice {
