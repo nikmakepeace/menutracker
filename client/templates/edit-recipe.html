@@ -39,6 +39,9 @@
 				</div>
 				<div class="col-md-10 text-right" id="split-ingredients"></div>
 			</div>
+			{{#each getStringifiedImages}}
+				<input type="hidden" name="uploaded-image" value="{{.}}">
+			{{/each}}
 		</form>
 	</section>
 
@@ -46,9 +49,26 @@
 </template>
 
 <template name="editRecipe-outer">
-	<div class="row">
+	<div id="image-upload-drop-target" class="row">
 		<div class="col-md-8">
 			{{> editRecipe}}
 		</div>
+		<div class="col-md-4">
+			<section id="images-upload-results">
+				{{#if images}}
+				<h2>Pictures of this recipe</h2>
+				{{else}}
+				<h2 class="hidden">Pictures of this recipe</h2>
+				{{/if}}
+				<div id="images-upload-thumbnails">
+				{{#each images}}
+					<img src="{{getThumbnail}}" class="img-thumbnail">
+				{{/each}}
+				</div>
+			</section>
+		</div>
+	</div>
+	<div id="upload-notice" class="text-center bg-info">
+	<p>Drop images below to add them to your recipe</p>
 	</div>
 </template>

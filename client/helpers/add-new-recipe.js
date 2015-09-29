@@ -29,7 +29,7 @@
         
         var fileIndex = 0;
         var fileList = event.originalEvent.dataTransfer.files;
-        var uploader = new Uploader(new HtmlImgurUploadStateNotifier($));
+        var uploader = new Uploader(new HtmlImgurUploadStateNotifier($, 'addNewRecipeF'));
 
         do {
             try {
