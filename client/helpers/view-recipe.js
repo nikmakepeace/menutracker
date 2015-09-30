@@ -41,6 +41,8 @@ Template.viewRecipe.onRendered(function () {
 	if (otc.hasOvenTemperature()) {
 		$('#gasmark-button').removeClass('hidden');
 	}
+
+	randomRotate($('.view-recipe-thumbnails'), -15, 15);
 });
 
 Template.viewRecipe.events({

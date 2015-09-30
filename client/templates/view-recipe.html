@@ -30,9 +30,11 @@
   					<button type="button" class="btn btn-default temp-converter" data-scale="F">Fahrenheit</button>
   					<button id="gasmark-button" type="button" class="btn btn-default temp-converter hidden" data-scale="GasMark">Gas mark</button>
   				</div>
+  				<ol>
 				{{#each show src=method}}
-				<p>{{line}}</p>
+				<li>{{line}}</li>
 				{{/each}}
+				</ol>
 			</section>
 		</div>
 		<div class="col-md-3">
