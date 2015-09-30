@@ -25,6 +25,10 @@ Template.viewRecipe.helpers({
 			});
 		}, output);
 		return output;
+	},
+	get640: function () {
+		var imgurTool = new ImgurTool();
+		return imgurTool.get640(this.link, this.id);
 	}
 });
 

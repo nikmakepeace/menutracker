@@ -78,7 +78,7 @@ Template['editRecipe-outer'].helpers({
 
 	getThumbnail: function () {
 		var imgurTool = new ImgurTool();
-		return imgurTool.getThumbnailFromLinkAndId(this.link, this.id);
+		return imgurTool.getThumbnail(this.link, this.id);
 	},
 
 

@@ -11,7 +11,7 @@ HtmlImgurUploadStateNotifier = function (jQuery, formId) {
     this.handleResponse = function (result) {
         var imgurTool = new ImgurTool();
         jQuery('#images-upload-results').removeClass('hidden'); 
-        jQuery('#images-upload-thumbnails').prepend('<img src="' + imgurTool.getThumbnailFromLinkAndId(result.data.link, result.data.id) + '" class="img-thumbnail">');
+        jQuery('#images-upload-thumbnails').prepend('<img src="' + imgurTool.getThumbnail(result.data.link, result.data.id) + '" class="img-thumbnail">');
         var imageData = {
             src: 'imgur',
             id: result.data.id,
@@ -25,10 +25,3 @@ HtmlImgurUploadStateNotifier = function (jQuery, formId) {
     }
 };
 
-ImgurTool = function () {
-    this.getThumbnailFromLinkAndId = function(link, id) {
-        var start = link.slice(0, link.indexOf(id) + id.length);
-        var end = link.slice(link.indexOf(id) + id.length);
-        return start + 's' + end;
-    }
-}

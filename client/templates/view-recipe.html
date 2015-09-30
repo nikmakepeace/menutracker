@@ -13,7 +13,7 @@
 		{{/if}}
 	</div>
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<section id="ingredients">
 				<h2>Ingredients</h2>
 				{{#each showIngredients src=ingredients}}
@@ -21,19 +21,26 @@
 				{{/each}}
 			</section>
 		</div>
-		<div class="col-md-9">
+		<div class="col-md-7">
 			<section id="method">
-				<div id="temperature-conversion" class="hidden btn-group btn-group-xs pull-right" role="group" aria-label="temperature conversions">
+				<h2>Method</h2>
+
+				<div id="temperature-conversion" class="hidden btn-group btn-group-xs" role="group" aria-label="temperature conversions">
   					<button type="button" class="btn btn-default temp-converter" data-scale="C">Celsius</button>
   					<button type="button" class="btn btn-default temp-converter" data-scale="F">Fahrenheit</button>
   					<button id="gasmark-button" type="button" class="btn btn-default temp-converter hidden" data-scale="GasMark">Gas mark</button>
   				</div>
-
-				<h2>Method</h2>
 				{{#each show src=method}}
 				<p>{{line}}</p>
 				{{/each}}
 			</section>
+		</div>
+		<div class="col-md-3">
+			{{#each images}}
+			<div class="view-recipe-thumbnails">
+				<img class="view-recipe-thumbnail {{randomRotation}} img-responsive img-thumbnail" src="{{get640}}">
+			</div>
+			{{/each}}
 		</div>
 	</div>
 </template>

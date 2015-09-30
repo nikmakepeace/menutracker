@@ -9,3 +9,18 @@ textarea#ingredients {
 textarea#method {
 	height: 8em
 }
+
+div#temperature-conversion {
+	margin-top: -36px;
+	float: right;
+}
+
+div.view-recipe-thumbnails {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+img.view-recipe-thumbnail { 
+	margin-bottom: 5px;
+	box-shadow: 1px 1px 5px;
+}
