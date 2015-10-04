@@ -32,17 +32,26 @@
   				</div>
   				<ol>
 				{{#each show src=method}}
-				<li>{{line}}</li>
+					<li>{{line}}</li>
 				{{/each}}
 				</ol>
 			</section>
 		</div>
 		<div class="col-md-3">
-			{{#each images}}
-			<div class="view-recipe-thumbnails">
-				<img class="view-recipe-thumbnail {{randomRotation}} img-responsive img-thumbnail" src="{{get640}}">
+		{{#if images}}
+			<h2>Pictures</h2>
+			<div>
+				<div class="thumbnail-stack">
+				{{#each images}}
+				
+					<div class="thumbnail-stack-item">
+						<img class="recipe-thumbnail img-responsive" src="{{get640}}" >
+					</div>
+				
+				{{/each}}
+				</div>
 			</div>
-			{{/each}}
+		{{/if}}
 		</div>
 	</div>
 </template>
@@ -53,4 +62,14 @@
 {{#if line.ingredient}}
 	<p>{{line.text}}</p>
 {{/if}}
+</template>
+
+<template name="recipeGallery">
+<div id="recipe-gallery" class="gallery js-flickity">
+	{{#each images}}
+		<div class="gallery-cell">
+			<img class="img-responsive" src="{{get640}}">
+		</div>
+	{{/each}}
+</div>
 </template>

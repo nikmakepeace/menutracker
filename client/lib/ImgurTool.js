@@ -14,4 +14,7 @@ ImgurTool = function () {
     this.get640 = function(link, id) {
     	return getSizedUrl(link, id, 'l');
     }
+    this.getFull = function(link, id) {
+    	return link;//getSizedUrl(link, id, '');
+    }
 }

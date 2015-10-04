@@ -15,12 +15,20 @@ div#temperature-conversion {
 	float: right;
 }
 
-div.view-recipe-thumbnails {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-img.view-recipe-thumbnail { 
+div.thumbnail-stack img.recipe-thumbnail { 
 	margin-bottom: 5px;
 	box-shadow: 1px 1px 5px;
+	padding: 15px;
+	background-color: white;
 }
+
+
+
+.js-photostack { position: relative; }
+
+.js-photostack > * {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+

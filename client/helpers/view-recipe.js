@@ -29,7 +29,8 @@ Template.viewRecipe.helpers({
 	get640: function () {
 		var imgurTool = new ImgurTool();
 		return imgurTool.get640(this.link, this.id);
-	}
+	},
+
 });
 
 Template.viewRecipe.onRendered(function () {
@@ -42,7 +43,7 @@ Template.viewRecipe.onRendered(function () {
 		$('#gasmark-button').removeClass('hidden');
 	}
 
-	randomRotate($('.view-recipe-thumbnails'), -15, 15);
+	$('.thumbnail-stack').Photostack({left: '250px', animationTime: 200});
 });
 
 Template.viewRecipe.events({
@@ -55,4 +56,8 @@ Template.viewRecipe.events({
 			alert(err)	// do nothing
 		}
 	}
+});
+
+Template.viewRecipe.onRendered(function () {
+
 });
