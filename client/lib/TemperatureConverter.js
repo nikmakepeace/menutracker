@@ -1,6 +1,6 @@
 TemperatureConverter = function() {
 	this.gasMarkTable = {
-		105: '¼',
+		100: '¼',
 		110: '¼',
 		120: '½',
 		130: '1',
@@ -8,6 +8,9 @@ TemperatureConverter = function() {
 
 	this.getLowestGasMarkInCelsius = function () {
 		return Object.keys(this.gasMarkTable).sort().slice(0,1);
+	}
+	this.getHighestGasMarkInCelsius = function () {
+		return 250;
 	}
 
 	this.fromCToF = function(f) {
@@ -26,15 +29,12 @@ TemperatureConverter = function() {
 	}
 
 	this.fromFToGasMark = function (f) {
-		if(this.fromFToC(f) < 100) {
-			throw ('Temperature too low to convert to gas mark');
-		}
 		return this.fromCToGasMark(this.fromFToC(f));
 	}
 
 	this.fromCToGasMark = function (c) {
-		if(c < 100) {
-			throw ('Temperature too low to convert to gas mark');
+		if(c < this.getLowestGasMarkInCelsius() || c > this.getHighestGasMarkInCelsius) {
+			throw ('Temperature out of gas mark range');
 		}
 		if(c < 135) {
 			return this.gasMarkTable[this.round(c, 10)];

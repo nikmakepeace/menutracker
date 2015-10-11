@@ -2,14 +2,19 @@ OvenTemperatureConverter = function(jQuery, ovenTemperatureMarkupGenerator, oven
     this.$ = jQuery;
 	
 	var hasTemperature = { celsius: false, fahrenheit: false, gasmark: false};
-	var overMinimumGasMarkTemp = false;
+	var withinGasMarkRange = false;
 
 	this.hasAnyTemperature = function () {
 		return hasTemperature.celsius || hasTemperature.fahrenheit || hasTemperature.gasmark;
 	}
 
 	this.hasOvenTemperature = function () {
-		return overMinimumGasMarkTemp;
+		return withinGasMarkRange;
+	}
+
+	var checkGasMarkRange = function(degreesC) {
+		return (degreesC >= (ovenTemperatureConverter.getLowestGasMarkInCelsius() -0)
+			&& degreesC <= ovenTemperatureConverter.getHighestGasMarkInCelsius() - 0);
 	}
 
 	// Called on template rendered event
@@ -19,9 +24,7 @@ OvenTemperatureConverter = function(jQuery, ovenTemperatureMarkupGenerator, oven
 		var celsius = /(\-?\d+)(?:°?|\s?degrees?)\s?(?:c|celsius|centigrade)\b/gi
 		var replacer = function(fullMatch, amount) {
 			//	track whether a conversion has exceeded the lowest gas mark, so that later on we can not show the gas mark button if the recipe only has low temperatures
-			if(amount >= (ovenTemperatureConverter.getLowestGasMarkInCelsius() -0)) {
-				overMinimumGasMarkTemp = true;
-			}
+			withinGasMarkRange = checkGasMarkRange(amount);
 			hasTemperature.celsius = true;
 			return ovenTemperatureMarkupGenerator.generateCMarkup(amount, {scale: 'C', amount: amount});
 		};
@@ -29,9 +32,7 @@ OvenTemperatureConverter = function(jQuery, ovenTemperatureMarkupGenerator, oven
 
 		var fahrenheit = /(\-?\d+)(?:°?|\s?degrees?)\s?(?:f|fahrenheit)\b/gi
 		replacer = function(fullMatch, amount) {
-			if(ovenTemperatureConverter.fromFToC(amount) >= ovenTemperatureConverter.getLowestGasMarkInCelsius()) {
-				overMinimumGasMarkTemp = true;
-			}
+			withinGasMarkRange = checkGasMarkRange(ovenTemperatureConverter.fromFToC(amount));
 			hasTemperature.fahrenheit = true;
 			return ovenTemperatureMarkupGenerator.generateFMarkup(amount, {scale: 'F', amount: amount})
 		};
@@ -39,7 +40,7 @@ OvenTemperatureConverter = function(jQuery, ovenTemperatureMarkupGenerator, oven
 
 		var gasmark = /gas mark (\d+)\b/gi
 		replacer = function(fullMatch, amount) {
-			overMinimumGasMarkTemp = true;
+			withinGasMarkRange = true;
 			hasTemperature.gasmark = true;
 			return ovenTemperatureMarkupGenerator.generateGasMarkMarkup(amount, {scale: 'GasMark', amount: amount});
 		};
