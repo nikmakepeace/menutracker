@@ -43,7 +43,7 @@ Template.viewRecipe.onRendered(function () {
 		$('#gasmark-button').removeClass('hidden');
 	}
 
-	$('.thumbnail-stack').Photostack({left: '250px', animationTime: 200});
+	$('.thumbnail-stack').Photostack({left: '450px', animationTime: 200});
 });
 
 Template.viewRecipe.events({
